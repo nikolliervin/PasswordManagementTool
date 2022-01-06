@@ -27,7 +27,7 @@ namespace Password_Management_Tool
         {
             
             OleDbConnection DataBaseConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" +
-                @"Data Source=C:\Users\user\source\repos\C# with Mosh\Password Management Tool\PasswordManagementToolDB.accdb");
+                @"Data Source=C:\Users\user\source\repos\Password Management Tool\PasswordManagementToolDB.accdb");
             DataBaseConnection.Open();
             DataSet DSet = new DataSet();
             OleDbDataAdapter DataAdapter = new OleDbDataAdapter("select psw_Name,psw_Website,psw_Password,psw_Username,psw_Email from PasswordManagement Where psw_Name Like ('" + SearchTextBox.Text + "%')", DataBaseConnection);
@@ -44,6 +44,11 @@ namespace Password_Management_Tool
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SearchForm_Load(object sender, EventArgs e)
         {
 
         }

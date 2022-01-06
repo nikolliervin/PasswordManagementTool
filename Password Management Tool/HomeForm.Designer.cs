@@ -33,6 +33,7 @@
             this.Home_Title = new System.Windows.Forms.Label();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.NavBarPanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.WelcomeUserLabel = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,7 +75,7 @@
             this.RefreshButton = new System.Windows.Forms.Button();
             this.DeletePasswordButton = new System.Windows.Forms.Button();
             this.AddPasswordButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.MovePanel = new System.Windows.Forms.Panel();
             this.BackgroudPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.NavBarPanel.SuspendLayout();
@@ -140,6 +141,14 @@
             this.NavBarPanel.Name = "NavBarPanel";
             this.NavBarPanel.Size = new System.Drawing.Size(147, 611);
             this.NavBarPanel.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(10, 114);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1, 190);
+            this.panel3.TabIndex = 4;
             // 
             // WelcomeUserLabel
             // 
@@ -631,13 +640,15 @@
             this.AddPasswordButton.UseVisualStyleBackColor = false;
             this.AddPasswordButton.Click += new System.EventHandler(this.AddPasswordButton_Click);
             // 
-            // panel3
+            // MovePanel
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(10, 114);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1, 190);
-            this.panel3.TabIndex = 4;
+            this.MovePanel.Location = new System.Drawing.Point(151, 0);
+            this.MovePanel.Name = "MovePanel";
+            this.MovePanel.Size = new System.Drawing.Size(761, 21);
+            this.MovePanel.TabIndex = 4;
+            this.MovePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseDown);
+            this.MovePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseMove);
+            this.MovePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseUp);
             // 
             // EirPass
             // 
@@ -645,6 +656,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(998, 608);
+            this.Controls.Add(this.MovePanel);
             this.Controls.Add(this.ToolBarPanel);
             this.Controls.Add(this.MinimazeLabel);
             this.Controls.Add(this.RectangleLabel);
@@ -726,6 +738,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Home_Title;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel MovePanel;
     }
 }
 

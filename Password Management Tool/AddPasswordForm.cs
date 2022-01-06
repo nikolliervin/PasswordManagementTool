@@ -38,7 +38,7 @@ namespace Password_Management_Tool
 
 
                 OleDbConnection my_con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" +
-                    @"Data Source=C:\Users\user\source\repos\C# with Mosh\Password Management Tool\PasswordManagementToolDB.accdb");
+                    @"Data Source=C:\Users\user\source\repos\Password Management Tool\PasswordManagementToolDB.accdb");
 
 
                 my_con.Open();

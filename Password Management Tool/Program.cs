@@ -16,7 +16,7 @@ namespace Password_Management_Tool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LoadingForm());
         }
     }
 }

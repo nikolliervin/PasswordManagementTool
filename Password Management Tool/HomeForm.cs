@@ -14,8 +14,10 @@ using System.Data.SqlClient;
 namespace Password_Management_Tool
 {   
     public partial class EirPass : Form
-    {   
-        
+    {
+        int MoveThis = 0;
+        int MoveX = 0;
+        int MoveY = 0;
 
         public EirPass()
         {
@@ -25,6 +27,9 @@ namespace Password_Management_Tool
 
 
             ShowOnlyBackgroundPanel();
+
+           
+
         }
 
         private void PasswordsButton_Click(object sender, EventArgs e)
@@ -32,7 +37,7 @@ namespace Password_Management_Tool
             ShowOnlyPasswordsPanel();
 
             OleDbConnection DataBaseConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" +
-                @"Data Source=C:\Users\user\source\repos\C# with Mosh\Password Management Tool\PasswordManagementToolDB.accdb");
+                @"Data Source=C:\Users\user\source\repos\Password Management Tool\PasswordManagementToolDB.accdb");
             DataBaseConnection.Open();
             DataSet DSet = new DataSet();
             OleDbDataAdapter DataAdapter = new OleDbDataAdapter("select psw_Name,psw_Website,psw_Password,psw_Username,psw_Email from PasswordManagement", DataBaseConnection);
@@ -127,7 +132,7 @@ namespace Password_Management_Tool
             ShowOnlyPasswordsPanel();
 
             OleDbConnection DataBaseConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" +
-                @"Data Source=C:\Users\user\source\repos\C# with Mosh\Password Management Tool\PasswordManagementToolDB.accdb");
+                @"Data Source=C:\Users\user\source\repos\Password Management Tool\PasswordManagementToolDB.accdb");
             DataBaseConnection.Open();
             DataSet DSet = new DataSet();
             OleDbDataAdapter DataAdapter = new OleDbDataAdapter("select psw_Name,psw_Website,psw_Password,psw_Username,psw_Email from PasswordManagement", DataBaseConnection);
@@ -258,6 +263,27 @@ namespace Password_Management_Tool
             var AboutForm = new AboutForm();
             AboutForm.ShowDialog();
            
+        }
+
+        private void MovePanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoveThis = 1;
+            MoveX = e.X;
+            MoveY = e.Y;
+            
+        }
+
+        private void MovePanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            MoveThis = 0;
+        }
+
+        private void MovePanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MoveThis == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X-MoveX, MousePosition.Y-MoveY);
+            }
         }
     }   
 }
